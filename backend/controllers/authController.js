@@ -15,7 +15,7 @@ exports.videoUpload = async (req, res, next) => {
     console.log("data is", data);
     const destinations = await videoUpload.create(data);
     res.json({
-      message: "success",
+      status: true   ,
       destinations,
     });
   } catch (error) {
@@ -27,14 +27,14 @@ exports.videoUpload = async (req, res, next) => {
   }
 };
 
-exports.videos = async (req, res) => {
+exports.videos = async (req, res) =>{
   try {
     const result = await videoUpload.find({});
     res.json({
-      message: "success",
+      message: "successpppp",
       data: result,
     });
-  } catch (error) {
+  } catch (error){
     res.json({
       error,
     });
